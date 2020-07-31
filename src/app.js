@@ -5,22 +5,24 @@ const port = process.env.PORT || 3000
 
 // How would this look like if moment.js is used?
 // Add a basic web page with input field and call API
+// Use hbs and create basic Footer / Header template 
+// Create about view to describe the app
 
 app.get('/api/timestamp/:date_string', (req, res) => {
   const dateParam = req.params.date_string
-  const dateNum = Number(dateParam)
-  const dateString = Date.parse(dateParam)
+  const dateParse = dateParam.match(/\d{4}-\d{2}-\d{2}/gm) ? Date.parse(dateParam) : Number(dateParam)
+  const date = new Date(dateParse)
 
-  if(isNaN(dateNum) && isNaN(dateString)){
+  const dateUnix = date.getTime()
+  const dateUTC = date.toUTCString()
+
+  if(isNaN(dateParse) || !dateUnix || dateUTC === "Invalid Date"){
     return res.send({ error: 'Invalid Date'})
   }
 
-  const convertDate = dateNum ? new Date(dateNum) : new Date(dateString)
-  const date = dateParam ? convertDate : new Date()
-
   res.jsonp({
-    unix: date.getTime(),
-    utc: date.toUTCString()
+    unix: dateUnix,
+    utc: dateUTC
   })
 })
 
