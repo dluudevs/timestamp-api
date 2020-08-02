@@ -21,7 +21,9 @@ hbs.registerPartials(partialsPath)
 
 
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {
+    title: 'Timestamp'
+  })
 })
 
 // question mark after param means it's optional. this route accepts an empty date_string param
@@ -35,10 +37,10 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
   
   // this will also handle invalid date_string formats
   if(!dateUnix || dateUTC === "Invalid Date"){
-    return res.jsonp({ error: 'Invalid Date'})
+    return res.send({ error: 'Invalid Date'})
   }
 
-  res.jsonp({
+  res.send({
     unix: dateUnix,
     utc: dateUTC
   })

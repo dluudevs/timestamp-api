@@ -12,7 +12,19 @@
 </head>
 <body>
   <header>
-    <h1>Timestamp Microservice</h1>
+    <h1>{{ title }}</h1>
+    <div class="main">
+      <p>Input a date (eg., 2020-01-01) or <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a></p>
+      <form id="form-date">
+        <input id="input-date" placeholder="Enter a date">
+        <button>Create Date</button>
+      </form>
+
+      <p id="message-utc"></p>
+      <p id="message-unix"></p>
+    </div>
   </header>
+  {{!-- reference files as if index.hbs is inside of public as all static assets are set to serve from that folder --}}
+  <script src="js/app.js"></script>
 </body>
 </html>
