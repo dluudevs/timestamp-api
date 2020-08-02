@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000
 // Create about view to describe the app
 const publicPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../template/views')
-const partialsPath = path.join(__dirname, '..template/partials')
+const partialsPath = path.join(__dirname, '../template/partials')
 
 app.use(express.static(publicPath))
 // setup express to use hbs
@@ -18,7 +18,6 @@ app.set('view engine', 'hbs')
 // render method will look in this path for views
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
-
 
 app.get('/', (req, res) => {
   res.render('index', {
