@@ -17,6 +17,10 @@ body {
   min-height: 100vh;
 }
 
+a, footer, .date {
+  color: #333333b0;
+}
+
 .main {
   flex-grow: 1;
 }
@@ -25,7 +29,7 @@ h1, h3, p {
   margin: 0;
 }
 
-h1, h3 {
+h1, h3, form {
   margin-bottom: 12px;
 }
 
@@ -39,7 +43,6 @@ p {
 
 a {
   text-decoration: none;
-  color: #333333b0;
   padding-bottom: 2px;
 }
 
@@ -74,7 +77,6 @@ footer {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid #333333b0;
-  color: #333333b0;
 }
 
 .portrait {

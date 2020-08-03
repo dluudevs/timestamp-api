@@ -7,8 +7,8 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   fetch(`/api/timestamp/${date.value}`).then(data => data.json())
     .then(res => {
-      utcMessage.textContent = `Your timestamp in UTC is: ${res.utc}.`
-      unixMessage.textContent = `In Unix, your timestamp is: ${res.unix}`
+      utcMessage.innerHTML = `Your timestamp in UTC is: <span class="date"> ${res.utc}. </span>`
+      unixMessage.innerHTML = `In Unix, your timestamp is: <span class="date"> ${res.unix}. </span>`
     })
 })
 
