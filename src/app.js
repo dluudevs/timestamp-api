@@ -25,6 +25,12 @@ app.get('/', (req, res) => {
   })
 })
 
+app.get('/about', (req, res) => {
+  res.render('about', {
+    title: 'About'
+  })
+})
+
 // question mark after param means it's optional. this route accepts an empty date_string param
 app.get('/api/timestamp/:date_string?', (req, res) => {
   const dateParam = req.params.date_string
