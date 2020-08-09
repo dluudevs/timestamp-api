@@ -1,5 +1,5 @@
 # timestamp-api
-A basic back-end app that converts numbers / strings to dates
+A basic full-stack app that converts numbers / strings to dates
 Built with JavaScript, Node, Express, HandleBars and curiosity.
 
 For a live version of the app, please visit https://dluudevs-timestamp.herokuapp.com/
